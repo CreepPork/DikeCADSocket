@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Uldis\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Uldis\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_DikeCADSocket.1127862888.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Uldis\Desktop\FXServer\server-data\resources\dikecad" t="ExcludeRecursive" />
+    <e p="C:\Users\Uldis\Documents\RiderProjects\DikeCADSocket" t="IncludeFlat">
+      <e p="DikeCADSocket.sln" t="IncludeFlat" />
+      <e p="DikeCADSocketClient" t="IncludeRecursive">
+        <e p="DikeCADSocketClient.cs" t="Include" />
+        <e p="DikeCADSocketClient.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="DikeCADSocketServer" t="IncludeRecursive">
+        <e p="DikeCADSocketServer.cs" t="Include" />
+        <e p="DikeCADSocketServer.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="DikeCADSocketShared" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Classes" t="Include">
+          <e p="EEmergencyVehiclesCode.cs" t="Include" />
+          <e p="PlayerData.cs" t="Include" />
+        </e>
+        <e p="DikeCADSocketShared.cs" t="Include" />
+        <e p="DikeCADSocketShared.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
