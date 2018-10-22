@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DikeCADSocketServer", "DikeCADSocketServer\DikeCADSocketServer.csproj", "{77D3B966-B97C-4D56-930B-A670C2FF5D26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DikeCADSocketClient", "DikeCADSocketClient\DikeCADSocketClient.csproj", "{7857608E-38CF-48C1-8A2C-3B7DEF8A97AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DikeCADSocketShared", "DikeCADSocketShared\DikeCADSocketShared.csproj", "{78FE6129-8092-4C9B-9517-2944A7C7C89C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77D3B966-B97C-4D56-930B-A670C2FF5D26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77D3B966-B97C-4D56-930B-A670C2FF5D26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77D3B966-B97C-4D56-930B-A670C2FF5D26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77D3B966-B97C-4D56-930B-A670C2FF5D26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7857608E-38CF-48C1-8A2C-3B7DEF8A97AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7857608E-38CF-48C1-8A2C-3B7DEF8A97AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7857608E-38CF-48C1-8A2C-3B7DEF8A97AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7857608E-38CF-48C1-8A2C-3B7DEF8A97AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78FE6129-8092-4C9B-9517-2944A7C7C89C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78FE6129-8092-4C9B-9517-2944A7C7C89C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78FE6129-8092-4C9B-9517-2944A7C7C89C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78FE6129-8092-4C9B-9517-2944A7C7C89C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
