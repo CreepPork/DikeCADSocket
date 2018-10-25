@@ -14,9 +14,6 @@ namespace DikeCADSocketClient
         public DikeCADSocketClient()
         {
             EventHandlers["playerSpawned"] += new Action(SendUpdateMessage);
-            EventHandlers.Add("dike:getData", new Action(SendUpdateMessage));
-            
-            RegisterCommand("dikeSendData", new Action(SendUpdateMessage), false);
             
             Tick += OnTick;
         }
@@ -52,11 +49,7 @@ namespace DikeCADSocketClient
                 GetEmergencyVehicleCode(player.Character.CurrentVehicle)
             );
 
-            string json = JsonConvert.SerializeObject(playerData);
-            
-            TriggerEvent("chatMessage", "Dike", new[] {255, 0, 0}, json);
-            
-            TriggerServerEvent("dike:receiveData", json);
+            TriggerServerEvent("dike:receiveData", JsonConvert.SerializeObject(playerData));
 
             _firstDataSent = true;
         }

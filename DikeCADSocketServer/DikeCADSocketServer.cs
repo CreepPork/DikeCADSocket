@@ -26,9 +26,6 @@ namespace DikeCADSocketServer
             {
                 socket.OnOpen += () =>
                 {
-                    socket.Send("Connection established.");
-                    Debug.WriteLine("Socket opened!");
-                    
                     Sockets.Add(socket);
                 };
             });
@@ -36,8 +33,6 @@ namespace DikeCADSocketServer
 
         private static void OnReceiveData(string json)
         {
-            Debug.WriteLine(json);
-
             new Thread(() =>
             {
                 foreach (IWebSocketConnection socket in Sockets.ToList())
