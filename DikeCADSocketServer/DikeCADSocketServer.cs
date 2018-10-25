@@ -43,9 +43,15 @@ namespace DikeCADSocketServer
                 foreach (KeyValuePair<IWebSocketConnection,bool> socket in Sockets)
                 {
                     // If socket is open
-                    if (socket.Value)
+                    if (! socket.Value) continue;
+                    
+                    if (socket.Key.IsAvailable)
                     {
                         socket.Key.Send(json);
+                    }
+                    else
+                    {
+                        Sockets.Remove(socket.Key);
                     }
                 }
             }).Start();
