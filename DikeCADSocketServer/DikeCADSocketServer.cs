@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using CitizenFX.Core;
 using Fleck;
@@ -8,8 +9,7 @@ namespace DikeCADSocketServer
 {
     public class DikeCADSocketServer : BaseScript
     {
-        // Socket, isOpen
-        private static readonly Dictionary<IWebSocketConnection, bool> Sockets = new Dictionary<IWebSocketConnection, bool>();
+        private static readonly List<IWebSocketConnection> Sockets = new List<IWebSocketConnection>();
 
         public DikeCADSocketServer()
         {
@@ -29,7 +29,7 @@ namespace DikeCADSocketServer
                     socket.Send("Connection established.");
                     Debug.WriteLine("Socket opened!");
                     
-                    Sockets.Add(socket, true);
+                    Sockets.Add(socket);
                 };
             });
         }
@@ -40,18 +40,15 @@ namespace DikeCADSocketServer
 
             new Thread(() =>
             {
-                foreach (KeyValuePair<IWebSocketConnection,bool> socket in Sockets)
+                foreach (IWebSocketConnection socket in Sockets.ToList())
                 {
-                    // If socket is open
-                    if (! socket.Value) continue;
-                    
-                    if (socket.Key.IsAvailable)
+                    if (socket.IsAvailable)
                     {
-                        socket.Key.Send(json);
+                        socket.Send(json);
                     }
                     else
                     {
-                        Sockets.Remove(socket.Key);
+                        Sockets.Remove(socket);
                     }
                 }
             }).Start();
