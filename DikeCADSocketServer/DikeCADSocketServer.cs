@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading;
 using CitizenFX.Core;
 using Fleck;
+using Newtonsoft.Json;
 
 namespace DikeCADSocketServer
 {
@@ -14,8 +15,16 @@ namespace DikeCADSocketServer
         public DikeCADSocketServer()
         {
             EventHandlers.Add("dike:receiveData", new Action<string>(OnReceiveData));
+            EventHandlers["playerDropped"] += new Action<string, Player>(OnPlayerDropped);
 
             CreateWebSocketServer();
+        }
+
+        private static void OnPlayerDropped(string reason, [FromSource] Player player)
+        {
+            string json = JsonConvert.SerializeObject(new PlayerDropped(reason, int.Parse(player.Handle)));
+            
+            OnReceiveData(json);
         }
 
         private static void CreateWebSocketServer()
@@ -47,6 +56,18 @@ namespace DikeCADSocketServer
                     }
                 }
             }).Start();
+        }
+        
+        private class PlayerDropped
+        {
+            public PlayerDropped(string reason, int id)
+            {
+                Reason = reason;
+                ID = id;
+            }
+
+            public string Reason { get; set; }
+            public int ID { get; set; }
         }
     }
 }
